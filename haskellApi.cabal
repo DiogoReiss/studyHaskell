@@ -1,0 +1,90 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           haskellApi
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/DiogoReiss/studyHaskell#readme>
+homepage:       https://github.com/DiogoReiss/studyHaskell#readme
+bug-reports:    https://github.com/DiogoReiss/studyHaskell/issues
+author:         Diogo Reis
+maintainer:     example@example.com
+copyright:      2021 Diogo Reis
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/DiogoReiss/studyHaskell
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_haskellApi
+  hs-source-dirs:
+      src
+  build-depends:
+      Spock
+    , base >=4.7 && <5
+    , focus
+    , http-types
+    , mtl
+    , primitive-extras
+    , primitive-unlifted
+    , reroute
+    , stm-containers
+    , stm-hamt
+    , text
+  default-language: Haskell2010
+
+executable haskellApi-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskellApi
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Spock
+    , base >=4.7 && <5
+    , focus
+    , haskellApi
+    , http-types
+    , mtl
+    , primitive-extras
+    , primitive-unlifted
+    , reroute
+    , stm-containers
+    , stm-hamt
+    , text
+  default-language: Haskell2010
+
+test-suite haskellApi-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskellApi
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Spock
+    , base >=4.7 && <5
+    , focus
+    , haskellApi
+    , http-types
+    , mtl
+    , primitive-extras
+    , primitive-unlifted
+    , reroute
+    , stm-containers
+    , stm-hamt
+    , text
+  default-language: Haskell2010
